@@ -21,6 +21,7 @@ Goerli is no longer supported.
 | Schema Registry (EAS) | Stores schema definitions (templates for attestations). See EAS' [docs](https://docs.attest.sh/docs/quick--start/quickstart) for more info.                                                                                                                                                                                                                                                 | [0x4200000000000000000000000000000000000020](https://sepolia.basescan.org/address/0x4200000000000000000000000000000000000020) (Predeploy) |
 | Coinbase Indexer      | All Coinbase attestations will be indexed in this contract.<br><br>You can query for the latest attestation ID by providing the attestation's recipient (address), and target schema ID (bytes32). See [below](#build-with-coinbase-verifications) for details on the full interface.<br><br>The actual attestation, and its data can be retrieved directly from EAS using the returned ID. | [0xd147a19c3B085Fb9B0c15D2EAAFC6CB086ea849B](https://sepolia.basescan.org/address/0xd147a19c3B085Fb9B0c15D2EAAFC6CB086ea849B)             |
 | Coinbase Attester     | All Coinbase attestations will be issued from this contract / address.<br><br>You can use the address of this contract for verifying the origin of the attestation, though, verifying the schema ID should be sufficient in most cases as our schemas are protected such that only Coinbase permitted attesters may use it.                                                                 | [0xB5644397a9733f86Cacd928478B29b4cD6041C45](https://sepolia.basescan.org/address/0xB5644397a9733f86Cacd928478B29b4cD6041C45)             |
+| Coinbase Resolver     | A custom EAS schema resolver contract used by permissioned Coinbase schemas to restrict schema usage to permitted attesters, and to index attestations to the indexer on attest.                                                                                                                                                                                                   | [0x31c04B28E0Dc9909616357bD713De179408F48B0](https://sepolia.basescan.org//address/0x31c04B28E0Dc9909616357bD713De179408F48B0)            |
 
 ### Base Mainnet (Production)
 
@@ -32,6 +33,7 @@ _See previous section for description._
 | Schema Registry (EAS) | [0x4200000000000000000000000000000000000020](https://basescan.org/address/0x4200000000000000000000000000000000000020) (Predeploy) |
 | Coinbase Indexer      | [0x2c7eE1E5f416dfF40054c27A62f7B357C4E8619C](https://basescan.org/address/0x2c7eE1E5f416dfF40054c27A62f7B357C4E8619C)             |
 | Coinbase Attester     | [0x357458739F90461b99789350868CD7CF330Dd7EE](https://basescan.org/address/0x357458739F90461b99789350868CD7CF330Dd7EE)             |
+| Coinbase Resolver     | [0xD867CbEd445c37b0F95Cc956fe6B539BdEf7F32f](https://basescan.org//address/0xD867CbEd445c37b0F95Cc956fe6B539BdEf7F32f)            |
 
 
 ## EAS Schemas
@@ -42,6 +44,7 @@ _See previous section for description._
 |---|---|---|
 | Verified Account | An attestation type that can be claimed by a Coinbase user with a valid Coinbase trading account. The criteria / definition for this will vary across jurisdictions.<br><br>The attestation includes a boolean field that is always set to true.<br><br>[(Example)](https://base-sepolia.easscan.org/attestation/view/0xc58090591ab7038dcc76ecc6206029cfadb8a920e80541d4fb26aaaa9af35229) | [0x2f34...5a69](https://base-sepolia.easscan.org/schema/view/0x2f34a2ffe5f87b2f45fbc7c784896b768d77261e2f24f77341ae43751c765a69) |
 | Verified Country | An attestation type that can be claimed by a Coinbase user that includes the user’s verified country of residence on Coinbase.<br><br>The attestation includes a string field that is set to the customer’s residing country code in ISO 3166-1 alpha-2 format.<br><br>[(Example)](https://base-sepolia.easscan.org/attestation/view/0xdfb1af13b6cccc6cdb818b96785e9a11804fd743249ce77f67e7595274f80ca9) | [0xef54...4028](https://base-sepolia.easscan.org/schema/view/0xef54ae90f47a187acc050ce631c55584fd4273c0ca9456ab21750921c3a84028) |
+| Verified Coinbase One | An attestation type that can be claimed by a Coinbase user with an active Coinbase One membership.<br><br>The attestation includes a boolean field that is always set to true.<br><br>[(Example)](https://base-sepolia.easscan.org/attestation/view/0x2b77823380ec1d6ef8224d4632b832d85ba55c231dc0a87a59d14b33bbb4666c) | [0xef8a...1e8c](https://base-sepolia.easscan.org/schema/view/0xef8a28852c57170eafe8745aff8b47e22d36b8fb05476cc9ade66637974a1e8c) |
 
 ### Base Mainnet (Production)
 
@@ -51,6 +54,7 @@ _See previous section for description._
 |---|---|
 | Verified Account | [0xf8b05c79f090979bf4a80270aba232dff11a10d9ca55c4f88de95317970f0de9](https://base.easscan.org/schema/view/0xf8b05c79f090979bf4a80270aba232dff11a10d9ca55c4f88de95317970f0de9) |
 | Verified Country | [0x1801901fabd0e6189356b4fb52bb0ab855276d84f7ec140839fbd1f6801ca065](https://base.easscan.org/schema/view/0x1801901fabd0e6189356b4fb52bb0ab855276d84f7ec140839fbd1f6801ca065) |
+| Verified Coinbase One | [0x254bd1b63e0591fefa66818ca054c78627306f253f86be6023725a67ee6bf9f4](https://base.easscan.org/schema/view/0x254bd1b63e0591fefa66818ca054c78627306f253f86be6023725a67ee6bf9f4) |
 
 
 ## Build with Coinbase Verifications
