@@ -1,4 +1,6 @@
 # Coinbase Verifications
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAremixdj%2Fverifications.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAremixdj%2Fverifications?ref=badge_shield)
+
 
 "Coinbase Verifications" is a set of Coinbase-verified onchain attestations that enable access to apps and other onchain benefits. Our implementation is built to further the broader onchain ecosystem by leveraging [Ethereum Attestation Service ("EAS")](https://attest.sh/), an open-source public good that is included as a predeploy in the OP Stack. 
 
@@ -80,3 +82,7 @@ forge install coinbase/verifications
 ### Examples
 
 _Coming soon._
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAremixdj%2Fverifications.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAremixdj%2Fverifications?ref=badge_large)
